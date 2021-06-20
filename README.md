@@ -6,7 +6,7 @@
 
 - Lugar: CEPS-UNI
 - Horario: Domingos de 08-12 Horas
-- Inicio: 13-JUN-2021
+- Inicio: 20-JUN-2021
 - Duración: 24 Horas
 - Dirección: https://goo.gl/maps/PyC3Ek8MXW3bVZoC7
 - Canal Youtube: https://www.youtube.com/channel/UC7c3C0Dtr6HnSpxAAWN643A?sub_confirmation=1
@@ -15,7 +15,7 @@
 
 ## DATOS DEL DOCENTE
 
-- Docente: ERIC GUSTAVO CORONEL CASTILLO
+- Docente: CORONEL CASTILLO ERIC GUSTAVO
 - Blog: www.desarrollasoftware.com
 - Correo del curso: egcc.uni@gmail.com
 - Blog: www.desarrollasoftware.com
