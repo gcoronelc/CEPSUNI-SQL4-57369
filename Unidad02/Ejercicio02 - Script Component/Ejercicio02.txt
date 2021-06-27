@@ -5,7 +5,9 @@ Por ejemplo un codigo en su descripción.
 Se puede incluir logica con VB o C#.
 
 El objetivo es llevar los datos del archivo 
-territorios.txt a la tabla BDDestino..Territorios
+territorios.txt a la tabla BD57369..Territorios
+
+territorios.txt ==> BD57369..Territorios
 
 La tercera columna tiene el código de territorio,
 se debe remplazar por su descripción:
