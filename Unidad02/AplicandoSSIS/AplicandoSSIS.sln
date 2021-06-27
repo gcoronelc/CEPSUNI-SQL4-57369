@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "AplicandoSSIS", "AplicandoSSIS\AplicandoSSIS.dtproj", "{DA30F605-2063-4DFE-9FC0-BCB92A4B6953}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA30F605-2063-4DFE-9FC0-BCB92A4B6953}.Development|Default.ActiveCfg = Development
+		{DA30F605-2063-4DFE-9FC0-BCB92A4B6953}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91AF3516-B3B5-4BB0-8B6A-B654049CC043}
+	EndGlobalSection
+EndGlobal
