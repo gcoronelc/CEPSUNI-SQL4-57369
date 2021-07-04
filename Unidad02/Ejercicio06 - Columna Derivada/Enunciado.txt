@@ -14,3 +14,8 @@ Objetivos:
   - Crear una columna Edad, donde se tendrá la edad del empleado.
   - Tabla destino: DatosEmpleado
   - DATEDIFF( "YEAR", [BirthDate], GETDATE() )
+  
+  
+CADENAS: Cadenas simples y cadenas UNICODE
+
+(DT_STR, 100, 1252) ([FirstName] + ", " +  [LastName])

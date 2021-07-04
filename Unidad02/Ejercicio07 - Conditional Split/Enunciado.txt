@@ -1,0 +1,16 @@
+TRANSFORMACIÓN: CONDITIONAL SPLIT
+---------------------------------------------------------------------------------------
+Evalua condiciones del origen de datos y los direcciona a una salida.
+Es similar a una estructura switch o case de los lenguajes de programación.
+Puede tener varias salidas en base a las condiciones.
+Las filas que no cumplen con ninguna condición son enviadas a una salida por defecto.
+
+EJEMPLO
+---------------------------------------------------------------------------------------
+Los clientes de la tabla Northwind.dbo.Customers se pasan a tres tablas.
+Tabla1: Clientes de USA, FRANCE Y GERMANY
+Tabla2: BRAZIL, UK, SPAIN Y MEXICO
+Tabla3: El resto de clientes
+Utilizar la función FINDSTRING
+
+FINDSTRING("BRAZIL, UK, SPAIN, MEXICO", [Country], 1) > 0

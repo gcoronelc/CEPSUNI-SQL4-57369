@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
-    <Name>AplicandoSSIS</Name>
-    <LastWriteTime>2021-07-04T14:43:17.6190371Z</LastWriteTime>
+    <Name>Poblar_Northwind_DM</Name>
+    <LastWriteTime>2021-07-04T16:46:34.2902782Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>PKG57369.dtsx</Name>
-      <LastWriteTime>2021-07-04T16:36:26.0474624Z</LastWriteTime>
+      <Name>PKGCargaNWDM.dtsx</Name>
+      <LastWriteTime>2021-07-04T16:44:59.4054192Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
