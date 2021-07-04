@@ -23,3 +23,17 @@ join Northwind.dbo.Categories c on p.CategoryID = c.CategoryID
 join Northwind.dbo.Suppliers s on p.SupplierID = s.SupplierID;
 GO
 
+
+select * from ventas01;
+select * from ventas02;
+select * from ventas03;
+go
+
+
+select * from [Empleados] ;
+go
+
+
+
+
+
