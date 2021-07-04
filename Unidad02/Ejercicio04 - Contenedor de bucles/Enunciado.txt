@@ -1,16 +1,19 @@
 Trnsformación: Contenedor de bucles Foreach
 -------------------------------------------------------------------------------
 
-Se va ha leer archivos planos: DespachosPlanta01.txt y DespachosPlanta04.txt
+Guardar todos los despachos en una sola tabla.
 
-Se crea una variable: VarDespacho (debe ser de tipo string)
+Se va ha leer archivos planos: DespachosPlanta01.txt, DespachosPlanta02.txt,
+                               DespachosPlanta03.txt y DespachosPlanta04.txt
+
+Se crea una variable: VarCadenaConexion (debe ser de tipo string)
 
 El contenedor de bucles debe leer el nombre de los archivos uno por uno 
-y asignarlo a la variable VarDespacho.
+y asignarlo a la variable VarCadenaConexion.
 
 Se crea una nueva conexión a uno de los archivo planos
 
 En la propiedad Expresiones se modifica la propiedad ConnectionString 
-para que utilice el valor de la variable VarDespacho
+para que utilice el valor de la variable VarCadenaConexion.
 
 Se agrega un transformación de Flujo de datos y se completa la transformación
