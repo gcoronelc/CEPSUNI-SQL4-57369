@@ -11,8 +11,8 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="PKG57369"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{6B06CE7D-0A64-4777-859E-B1BD7DBA888B}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{50741105-86B4-427C-B06C-5AC92BBEFC61}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4559,6 +4559,1548 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Cargar ventas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{11B0F1C7-0B15-46A6-B66F-700170D61F45}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cargar ventas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cargar ventas\Graba Ventas 01"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Graba Ventas 01"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Ventas01]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar ventas\Graba Ventas 01.Connections[OleDbConnection]"
+                  connectionManagerID="{39C1535A-7C53-4DB6-BED6-DABE241DAACA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EGCC2020.BD57369.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      cachedDataType="i8"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      cachedDataType="r8"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].Columns[Importe]"
+                      cachedDataType="r8"
+                      cachedName="Importe"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[Importe]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[Importe]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="numeric"
+                      name="UnitPrice"
+                      precision="12"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input].ExternalColumns[Importe]"
+                      dataType="numeric"
+                      name="Importe"
+                      precision="12"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar ventas\Graba Ventas 01.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\Graba Ventas 01.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 01.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\Graba Ventas 01.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar ventas\Graba Ventas 03"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Graba Ventas 03"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Ventas03]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar ventas\Graba Ventas 03.Connections[OleDbConnection]"
+                  connectionManagerID="{39C1535A-7C53-4DB6-BED6-DABE241DAACA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EGCC2020.BD57369.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].Columns[SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="SupplierID"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[SupplierID]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].Columns[SupplierName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="SupplierName"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[SupplierName]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[SupplierName]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].Columns[CategoryID]"
+                      cachedDataType="i4"
+                      cachedName="CategoryID"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[CategoryID]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].Columns[CategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CategoryName"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[CategoryName]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[CategoryName]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      cachedDataType="i8"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      cachedDataType="r8"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].Columns[Importe]"
+                      cachedDataType="r8"
+                      cachedName="Importe"
+                      externalMetadataColumnId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[Importe]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[Importe]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      dataType="i4"
+                      name="SupplierID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[SupplierName]"
+                      dataType="wstr"
+                      length="40"
+                      name="SupplierName" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
+                      dataType="i4"
+                      name="CategoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[CategoryName]"
+                      dataType="wstr"
+                      length="15"
+                      name="CategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="numeric"
+                      name="UnitPrice"
+                      precision="12"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input].ExternalColumns[Importe]"
+                      dataType="numeric"
+                      name="Importe"
+                      precision="12"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar ventas\Graba Ventas 03.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\Graba Ventas 03.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\Graba Ventas 03.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\Graba Ventas 03.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar ventas\Grabar Ventas 02"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Grabar Ventas 02"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Ventas02]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar ventas\Grabar Ventas 02.Connections[OleDbConnection]"
+                  connectionManagerID="{39C1535A-7C53-4DB6-BED6-DABE241DAACA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EGCC2020.BD57369.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].Columns[ShipCountry]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCountry"
+                      externalMetadataColumnId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[ShipCountry]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[ShipCountry]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].Columns[ShipCity]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCity"
+                      externalMetadataColumnId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[ShipCity]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[ShipCity]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      cachedDataType="i8"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      cachedDataType="r8"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].Columns[Importe]"
+                      cachedDataType="r8"
+                      cachedName="Importe"
+                      externalMetadataColumnId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[Importe]"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[Importe]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCountry" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCity" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="numeric"
+                      name="UnitPrice"
+                      precision="12"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input].ExternalColumns[Importe]"
+                      dataType="numeric"
+                      name="Importe"
+                      precision="12"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar ventas\Grabar Ventas 02.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\Grabar Ventas 02.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\Grabar Ventas 02.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\Grabar Ventas 02.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar ventas\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+	o.OrderID, o.CustomerID, 
+	s.SupplierID, s.CompanyName SupplierName,
+	c.CategoryID, c.CategoryName,
+	p.ProductID, p.ProductName, 
+	o.ShipCountry, o.ShipCity, 
+	od.Quantity, od.UnitPrice * (1-od.Discount) UnitPrice,
+	od.Quantity * od.UnitPrice * (1-od.Discount) Subtotal
+from Northwind.dbo.Orders o
+join Northwind.dbo.[Order Details] od on o.OrderID = od.OrderID 
+join Northwind.dbo.Products p on od.ProductID = p.ProductID 
+join Northwind.dbo.Categories c on p.CategoryID = c.CategoryID
+join Northwind.dbo.Suppliers s on p.SupplierID = s.SupplierID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar ventas\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{E1F18589-B396-4E55-A3B5-145ECB0B7E18}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EGCC2020.Northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      length="5"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierID]"
+                      name="SupplierID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SupplierName]"
+                      length="40"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierName]"
+                      name="SupplierName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CategoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CategoryID]"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CategoryID]"
+                      name="CategoryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CategoryName]"
+                      length="15"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CategoryName]"
+                      name="CategoryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      length="40"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipCountry]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShipCountry]"
+                      length="15"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipCountry]"
+                      name="ShipCountry"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipCity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShipCity]"
+                      length="15"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipCity]"
+                      name="ShipCity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subtotal]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subtotal]"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subtotal]"
+                      name="Subtotal"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
+                      dataType="i4"
+                      name="SupplierID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SupplierName]"
+                      dataType="wstr"
+                      length="40"
+                      name="SupplierName" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CategoryID]"
+                      dataType="i4"
+                      name="CategoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CategoryName]"
+                      dataType="wstr"
+                      length="15"
+                      name="CategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCountry" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCity" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="i2"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      dataType="r4"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Subtotal]"
+                      dataType="r4"
+                      name="Subtotal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                      name="OrderID" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SupplierID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SupplierID]"
+                      name="SupplierID" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SupplierName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SupplierName]"
+                      name="SupplierName" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CategoryID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CategoryID]"
+                      name="CategoryID" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CategoryName]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CategoryName]"
+                      name="CategoryName" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShipCountry]"
+                      name="ShipCountry" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShipCity]"
+                      name="ShipCity" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="i2"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      dataType="r4"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subtotal]"
+                      dataType="r4"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Subtotal]"
+                      name="Subtotal" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar ventas\Sumarizar ventas"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Sumarizar ventas"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[Quantity]"
+                      cachedDataType="i2"
+                      cachedName="Quantity"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[UnitPrice]"
+                      cachedDataType="r4"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[Subtotal]"
+                      cachedDataType="r4"
+                      cachedName="Subtotal"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subtotal]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[ShipCountry]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCountry"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipCountry]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[ShipCity]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCity"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipCity]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="SupplierID"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierID]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[SupplierName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="SupplierName"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierName]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[CategoryID]"
+                      cachedDataType="i4"
+                      cachedName="CategoryID"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CategoryID]" />
+                    <inputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1].Columns[CategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="CategoryName"
+                      lineageId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CategoryName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01]"
+                  name="Ventas01">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[ProductID]"
+                      name="ProductID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[ProductName]"
+                      name="ProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[Quantity]"
+                      dataType="i8"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[Quantity]"
+                      name="Quantity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[UnitPrice]"
+                      dataType="r8"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[Importe]"
+                      dataType="r8"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01].Columns[Importe]"
+                      name="Importe">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subtotal]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02]"
+                  name="Ventas02">
+                  <properties>
+                    <property
+                      dataType="System.UInt32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[ShipCountry]"
+                      name="ShipCountry">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipCountry]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[ShipCity]"
+                      name="ShipCity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipCity]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[Quantity]"
+                      dataType="i8"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[Quantity]"
+                      name="Quantity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[UnitPrice]"
+                      dataType="r8"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[Importe]"
+                      dataType="r8"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02].Columns[Importe]"
+                      name="Importe">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subtotal]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03]"
+                  name="Ventas03">
+                  <properties>
+                    <property
+                      dataType="System.UInt32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[SupplierID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[SupplierID]"
+                      name="SupplierID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[SupplierName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[SupplierName]"
+                      name="SupplierName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[CategoryID]"
+                      dataType="i4"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[CategoryID]"
+                      name="CategoryID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CategoryID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[CategoryName]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[CategoryName]"
+                      name="CategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[CategoryName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[Quantity]"
+                      dataType="i8"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[Quantity]"
+                      name="Quantity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[UnitPrice]"
+                      dataType="r8"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[Importe]"
+                      dataType="r8"
+                      lineageId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03].Columns[Importe]"
+                      name="Importe">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Subtotal]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cargar ventas.Paths[OLE DB Source Output]"
+              endId="Package\Cargar ventas\Sumarizar ventas.Inputs[Aggregate Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Cargar ventas\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Cargar ventas.Paths[Ventas01]"
+              endId="Package\Cargar ventas\Graba Ventas 01.Inputs[OLE DB Destination Input]"
+              name="Ventas01"
+              startId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas01]" />
+            <path
+              refId="Package\Cargar ventas.Paths[Ventas02]"
+              endId="Package\Cargar ventas\Grabar Ventas 02.Inputs[OLE DB Destination Input]"
+              name="Ventas02"
+              startId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas02]" />
+            <path
+              refId="Package\Cargar ventas.Paths[Ventas03]"
+              endId="Package\Cargar ventas\Graba Ventas 03.Inputs[OLE DB Destination Input]"
+              name="Ventas03"
+              startId="Package\Cargar ventas\Sumarizar ventas.Outputs[Ventas03]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Limpar Tablas"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
@@ -4572,7 +6114,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{39C1535A-7C53-4DB6-BED6-DABE241DAACA}"
-          SQLTask:SqlStatementSource="delete from clientes;&#xA;delete from clientes2;&#xA;delete from Territorios;&#xA;delete from Territorios2;&#xA;delete from ClientesPeru;&#xA;delete from [DespachosPlanta];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="delete from clientes;&#xA;delete from clientes2;&#xA;delete from Territorios;&#xA;delete from Territorios2;&#xA;delete from ClientesPeru;&#xA;delete from [DespachosPlanta];&#xA;delete from ventas01;&#xA;delete from ventas02;&#xA;delete from ventas03;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -4625,6 +6167,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 5"
       DTS:To="Package\Bucle sobre los archivos de una carpeta" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{617AFB1E-527B-4A71-8D5F-1415A3DEC06A}"
+      DTS:From="Package\Limpar Tablas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 6"
+      DTS:To="Package\Cargar ventas" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -4838,9 +6388,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           TopLeft="48,31" />
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="277,128"
-          Size="277,171"
+          Size="277,43"
           Id="Package\Bucle sobre los archivos de una carpeta"
           TopLeft="809,209" />
         <EdgeLayout
@@ -4869,6 +6419,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point3="399.357142857143,35.9378238341969" />
                   <mssgle:LineSegment
                     End="399.357142857143,126.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Cargar ventas"
+          TopLeft="793,293" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 6]"
+          TopLeft="526.5,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="338.5,218"
+              Start="0,0"
+              End="338.5,210.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.4890282131661" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.4890282131661"
+                    Point2="0,74.4890282131661"
+                    Point3="4,74.4890282131661" />
+                  <mssgle:LineSegment
+                    End="334.5,74.4890282131661" />
+                  <mssgle:CubicBezierSegment
+                    Point1="334.5,74.4890282131661"
+                    Point2="338.5,74.4890282131661"
+                    Point3="338.5,78.4890282131661" />
+                  <mssgle:LineSegment
+                    End="338.5,210.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5330,6 +6918,199 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Bucle sobre los archivos de una carpeta\Cargar datos de planta\Graba despachos planta">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Cargar ventas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Cargar ventas\OLE DB Source"
+          TopLeft="413,94" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Cargar ventas\Sumarizar ventas"
+          TopLeft="402,243" />
+        <EdgeLayout
+          Id="Package\Cargar ventas.Paths[OLE DB Source Output]"
+          TopLeft="485,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,107"
+              Start="0,0"
+              End="0,99.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,99.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Cargar ventas\Graba Ventas 01"
+          TopLeft="91,491" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Cargar ventas\Grabar Ventas 02"
+          TopLeft="394,489" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Cargar ventas\Graba Ventas 03"
+          TopLeft="700,492" />
+        <EdgeLayout
+          Id="Package\Cargar ventas.Paths[Ventas01]"
+          TopLeft="438,285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-268.5,206"
+              Start="0,0"
+              End="-268.5,198.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,99" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,99"
+                    Point2="0,103"
+                    Point3="-4,103" />
+                  <mssgle:LineSegment
+                    End="-264.5,103" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-264.5,103"
+                    Point2="-268.5,103"
+                    Point3="-268.5,107" />
+                  <mssgle:LineSegment
+                    End="-268.5,198.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-155.25375,108,42.0075,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar ventas.Paths[Ventas02]"
+          TopLeft="473.916666666667,285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,204"
+              Start="0,0"
+              End="0,196.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,196.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.189296875,93.46337890625,42.37859375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cargar ventas.Paths[Ventas03]"
+          TopLeft="520,285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="258.5,207"
+              Start="0,0"
+              End="258.5,199.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.2622950819672" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,67.2622950819672"
+                    Point2="0,71.2622950819672"
+                    Point3="4,71.2622950819672" />
+                  <mssgle:LineSegment
+                    End="254.5,71.2622950819672" />
+                  <mssgle:CubicBezierSegment
+                    Point1="254.5,71.2622950819672"
+                    Point2="258.5,71.2622950819672"
+                    Point3="258.5,75.2622950819672" />
+                  <mssgle:LineSegment
+                    End="258.5,199.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="108.1241796875,76.2622950819672,42.251640625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar ventas\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar ventas\Graba Ventas 01">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar ventas\Grabar Ventas 02">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar ventas\Graba Ventas 03">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
