@@ -34,6 +34,21 @@ select * from [Empleados] ;
 go
 
 
+select * from northwind..customers;
+go
+
+select * from Tabla1Clientes;
+select * from Tabla2Clientes;
+select * from Tabla3Clientes;
+go
+
+
+select * from Northwind_DM..VENTAS_FACT;
+go
+
+select * from Northwind_DM..TIEMPO;
+go
+
 
 
 
