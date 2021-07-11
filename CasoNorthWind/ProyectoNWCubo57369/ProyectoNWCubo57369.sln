@@ -3,20 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Proyecto_NorthwindDM_57369", "Poblar_Northwind_DM\Proyecto_NorthwindDM_57369.dtproj", "{905BF196-F29B-4932-BF88-291F9788C36A}"
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "ProyectoNWCubo57369", "ProyectoNWCubo57369\ProyectoNWCubo57369.dwproj", "{93EA34FB-F13F-4A48-A53A-6FE3E97C94C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{905BF196-F29B-4932-BF88-291F9788C36A}.Development|Default.ActiveCfg = Development
-		{905BF196-F29B-4932-BF88-291F9788C36A}.Development|Default.Build.0 = Development
+		{93EA34FB-F13F-4A48-A53A-6FE3E97C94C8}.Development|Default.ActiveCfg = Development
+		{93EA34FB-F13F-4A48-A53A-6FE3E97C94C8}.Development|Default.Build.0 = Development
+		{93EA34FB-F13F-4A48-A53A-6FE3E97C94C8}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {597CF52B-A09A-4E58-A723-C3A076018EF7}
+		SolutionGuid = {D2B3F165-DCB6-4D7A-8C3A-A206AD7EDAA4}
 	EndGlobalSection
 EndGlobal
