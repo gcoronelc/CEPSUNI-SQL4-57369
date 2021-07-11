@@ -1,0 +1,7 @@
+https://docs.microsoft.com/es-es/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms
+
+https://www.sqlservercentral.com/articles/how-to-change-an-analysis-services-instance-to-tabular-mode
+
+
+https://github.com/microsoft/sql-server-samples/tree/master/samples/databases/adventure-works
+
