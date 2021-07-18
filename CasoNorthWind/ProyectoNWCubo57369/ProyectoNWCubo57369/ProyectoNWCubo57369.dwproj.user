@@ -3,7 +3,21 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>Northwind DM</Id>
+            <Name>Northwind DM</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvJNu1hyoLEisgeKZOiLKdwAAAAAaAAAATgBvAHIAdABoAHcAaQBuAGQAIABEAE0AAAAQZgAAAAEAACAAAAAaApB7xxKJCYYxUIh7RzktaIjxg/w5808WENkB5zlz+gAAAAAOgAAAAAIAACAAAAAK5z0HEFVsZn8q9PSJHKv0ZRoJVndhUTgkoEguqsi6/RAAAABVv/lnHgme2vP64k3mqA81QAAAAMZo+yT12DuaM6aqWNu194bmnJnEWYTyzOdBwkOFDaTlk2Hsq3bYBPGVmSDxOEwcoimBO5vdt3wTjhpzEeugBJ8=</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>Northwind DM</Id>
+            <Name>Northwind DM</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvJNu1hyoLEisgeKZOiLKdwAAAAAaAAAATgBvAHIAdABoAHcAaQBuAGQAIABEAE0AAAAQZgAAAAEAACAAAADZM5SskmC5BYXzMEt132HOZcf16ggwx/32eP0mOZ07agAAAAAOgAAAAAIAACAAAAB8o3K80Paaex6mI4K+nyAU5KtqY/BFCYZG1eC5oFw1chAAAAAfBiULBLH4yA+dBNuRfj4yQAAAAMz9YP+LGOpw+tpm4s9I4kY0envhih/hpDzeGrVgScSezfPJZ9+AXd04rSjYU+Evi76IxqMsnDws1KdnkMyvacQ=</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>EGCC2020</TargetServer>
         <TargetDatabase>ProyectoNWCubo57369</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>

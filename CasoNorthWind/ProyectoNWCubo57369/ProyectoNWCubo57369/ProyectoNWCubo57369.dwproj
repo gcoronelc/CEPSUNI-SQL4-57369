@@ -6,6 +6,18 @@
     <Name>ProyectoNWCubo57369.database</Name>
     <FullPath>ProyectoNWCubo57369.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>CUBONorthwind.cube</Name>
+      <FullPath>CUBONorthwind.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>CUBONorthwind.partitions</Name>
+          <FullPath>CUBONorthwind.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>DIM EMPLEADO.dim</Name>
@@ -22,6 +34,10 @@
     <ProjectItem>
       <Name>DIM PRODUCTO.dim</Name>
       <FullPath>DIM PRODUCTO.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DIM TIEMPO.dim</Name>
+      <FullPath>DIM TIEMPO.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -44,7 +60,7 @@
           <ConfigurationSetting>
             <Id>Northwind DM</Id>
             <Name>Northwind DM</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=EGCC2020;Password=;User ID=;Initial Catalog=Northwind_DM</Value>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=EGCC2020;Persist Security Info=True;Password=;User ID=;Initial Catalog=Northwind_DM</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>

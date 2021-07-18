@@ -1,8 +1,8 @@
 ﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
   <Target>
     <Database>ProyectoNWCubo57369</Database>
-    <Server>localhost</Server>
-    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+    <Server>EGCC2020</Server>
+    <ConnectionString>Data Source=EGCC2020;Timeout=0</ConnectionString>
   </Target>
   <Options>
     <TransactionalDeployment>false</TransactionalDeployment>
@@ -19,7 +19,7 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>oJ9pJdd/zTnlcm8HT5/HpH+aNyY=11/07/2021 11:14:2811/07/2021 10:44:07</TimeStamp>
+        <TimeStamp>W6DCSwmmyX3z6Y1OdvOt29zzgqU=18/07/2021 09:16:1511/07/2021 10:44:07</TimeStamp>
         <ID>
           <String>Northwind DM</String>
         </ID>
@@ -59,6 +59,20 @@
           <String>DIM PRODUCTO</String>
         </ID>
       </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>QPrH5bHC2Vvir4sJrEwqYhPD9Mc=18/07/2021 09:45:2618/07/2021 08:40:39</TimeStamp>
+        <ID>
+          <String>DIM TIEMPO</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>eR/4ljvGf8Ty2fwc5YegddWmxCw=18/07/2021 09:14:1018/07/2021 09:05:18L+33MTrCELqrJygS/AZw/KTwvKI=18/07/2021 09:05:1818/07/2021 09:05:18</TimeStamp>
+        <ID>
+          <String>CUBONorthwind</String>
+        </ID>
+      </ObjectSnapshot>
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
@@ -71,5 +85,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2021-07-11T16:48:43.313333Z</LastDeployed>
+  <LastDeployed>2021-07-18T14:47:42.253333Z</LastDeployed>
 </DeploymentSnapshot>
