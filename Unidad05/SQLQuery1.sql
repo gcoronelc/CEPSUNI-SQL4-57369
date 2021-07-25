@@ -1,0 +1,31 @@
+
+
+SELECT     CLIENTE.paisCliente, VENTAS_FACT.unidades, VENTAS_FACT.monto, VENTAS_FACT.fecha
+FROM        CLIENTE INNER JOIN
+                  VENTAS_FACT ON CLIENTE.idCliente = VENTAS_FACT.idCliente 
+WHERE  YEAR(VENTAS_FACT.fecha) = 1998
+
+
+select DISTINCT YEAR(VENTAS_FACT.fecha) ANIO FROM VENTAS_FACT order by 1 desc
+
+
+
+SELECT * FROM PRODUCTO;
+GO
+
+SELECT * FROM VENTAS_FACT;
+GO
+
+WITH
+PROD AS (
+	SELECT DISTINCT idProducto FROM VENTAS_FACT V
+	WHERE YEAR(fecha) = 1998
+)
+SELECT DISTINCT P.idCategoria, P.nomCategoria 
+FROM PRODUCTO P
+JOIN PROD ON P.idProducto = PROD.idProducto
+
+GO
+
+
+
